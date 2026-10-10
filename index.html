@@ -2,444 +2,243 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>SpendWise AI — Intelligent Expense Management</title>
-  <meta name="description" content="SpendWise AI is an AI-powered financial management platform that automates expense recording, categorisation, analysis, and reporting." />
+  <meta name="description" content="AI-powered expense management. Record, categorise, analyse and report expenses automatically." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <header class="header" id="header">
-    <div class="container nav-container">
-      <a href="#hero" class="logo">
+  <div id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
         <span class="logo-icon">SW</span>
         <span class="logo-text">SpendWise <span class="ai">AI</span></span>
-      </a>
-      <nav class="nav" id="nav">
-        <a href="#problem">Problem</a>
-        <a href="#how-it-works">How it Works</a>
-        <a href="#features">Features</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#users">Users</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#cta" class="nav-cta">Get Started</a>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">📊</span><span>Dashboard</span></button>
+        <button class="nav-item" data-view="expenses"><span class="nav-icon">💳</span><span>Expenses</span></button>
+        <button class="nav-item" data-view="add"><span class="nav-icon">➕</span><span>Add Expense</span></button>
+        <button class="nav-item" data-view="receipt"><span class="nav-icon">📷</span><span>Scan Receipt</span></button>
+        <button class="nav-item" data-view="reports"><span class="nav-icon">📈</span><span>Reports</span></button>
+        <button class="nav-item" data-view="insights"><span class="nav-icon">🤖</span><span>AI Insights</span></button>
       </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-content">
-      <div class="hero-badge">AI-Powered Financial Automation</div>
-      <h1>Stop managing expenses.<br /><span class="gradient-text">Start understanding them.</span></h1>
-      <p class="hero-sub">
-        SpendWise AI automates the recording, categorisation, analysis, and reporting of financial transactions — so you can focus on decisions, not data entry.
-      </p>
-      <div class="hero-actions">
-        <a href="#how-it-works" class="btn btn-primary">See How It Works</a>
-        <a href="#architecture" class="btn btn-secondary">View Architecture</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-value">4</span>
-          <span class="stat-label">Core Problems Solved</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">6+</span>
-          <span class="stat-label">Automation Stages</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">AI + Rules</span>
-          <span class="stat-label">Hybrid Intelligence</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Problem -->
-  <section class="section problem" id="problem">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">The Opportunity</span>
-        <h2>Born from real operational friction</h2>
-        <p>Inspired by repetitive manual processes observed at Smart Residences Ltd., SpendWise AI turns everyday expense administration into an intelligent, automated workflow.</p>
-      </div>
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-icon">📝</div>
-          <h3>Repetitive Data Entry</h3>
-          <p>Manually typing vendor, amount, date, and description for every transaction wastes hours every week.</p>
-          <div class="solution-badge">→ OCR + structured extraction</div>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🏷️</div>
-          <h3>Manual Categorisation</h3>
-          <p>Choosing the right expense category for every line item is tedious and error-prone.</p>
-          <div class="solution-badge">→ AI category recommendations</div>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🧮</div>
-          <h3>Time-Consuming Calculations</h3>
-          <p>Spreadsheets and manual totals introduce risk and delay financial visibility.</p>
-          <div class="solution-badge">→ Automatic aggregation & summaries</div>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">📊</div>
-          <h3>Slow Financial Reporting</h3>
-          <p>Preparing monthly or project reports often means starting from scratch each time.</p>
-          <div class="solution-badge">→ Instant reports & AI insights</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="section how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Workflow</span>
-        <h2>From receipt to insight in six steps</h2>
-        <p>Every stage is designed to minimise manual effort while keeping humans in control of financial decisions.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h3>Capture the Expense</h3>
-            <p>Upload a receipt image, import a spreadsheet, paste a bank statement, or enter details via a simple form. Multiple capture paths, one structured record.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h3>Extract Transaction Details</h3>
-            <p>OCR and document AI pull out vendor, date, amount, currency, and description. The result is clean, machine-readable data ready for the next stage.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h3>AI Categorisation</h3>
-            <p>The system recommends the best expense category using description, vendor, and context. Users can accept or correct — corrections improve future suggestions.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h3>Validate & Save</h3>
-            <p>Business rules check required fields, amounts, and duplicates. Once confirmed, the transaction is stored with full audit metadata.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">05</div>
-          <div class="step-content">
-            <h3>Calculate & Analyse</h3>
-            <p>Totals, category breakdowns, and budget comparisons are computed automatically and shown on the dashboard in real time.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">06</div>
-          <div class="step-content">
-            <h3>Generate Reports & Insights</h3>
-            <p>Ask natural questions or schedule reports. AI surfaces spending patterns, missing receipts, and items needing review.</p>
+      <div class="sidebar-footer">
+        <div class="user-chip">
+          <div class="avatar">D</div>
+          <div>
+            <div class="user-name">Demo User</div>
+            <div class="user-role">Finance Officer</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </aside>
 
-  <!-- Features -->
-  <section class="section features" id="features">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Capabilities</span>
-        <h2>What makes SpendWise AI different</h2>
-        <p>A normal expense tracker records transactions. SpendWise AI interprets information and reduces the work required to produce accurate, reviewable records.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">📷</div>
-          <h3>Receipt Intelligence</h3>
-          <p>Upload an image and let OCR + document AI extract vendor, date, amount, and description automatically.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤖</div>
-          <h3>Smart Categorisation</h3>
-          <p>AI recommends categories based on context. User corrections continuously refine future recommendations.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔍</div>
-          <h3>Duplicate Detection</h3>
-          <p>Matching rules and similarity analysis flag potential duplicate transactions before they enter the ledger.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📈</div>
-          <h3>Live Dashboards</h3>
-          <p>Instant totals, category breakdowns, budget progress, and spending trends without opening a spreadsheet.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📄</div>
-          <h3>Automated Reports</h3>
-          <p>Daily, weekly, and monthly summaries generated on demand or on a schedule and delivered to the right people.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔗</div>
-          <h3>Workflow Automation</h3>
-          <p>Connect receipt inboxes, approval notifications, and exports to accounting tools via automation platforms.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Human-in-the-Loop</h3>
-          <p>AI proposes; people confirm. Confidence indicators and correction flows keep financial control with the team.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🇳🇬</div>
-          <h3>Local-First Design</h3>
-          <p>Built with naira transactions, common Nigerian receipt formats, and practical business categories in mind.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Mobile bottom nav -->
+    <nav class="bottom-nav" id="bottomNav">
+      <button class="bn-item active" data-view="dashboard"><span>📊</span><span>Home</span></button>
+      <button class="bn-item" data-view="expenses"><span>💳</span><span>List</span></button>
+      <button class="bn-item bn-add" data-view="add"><span>➕</span></button>
+      <button class="bn-item" data-view="reports"><span>📈</span><span>Reports</span></button>
+      <button class="bn-item" data-view="insights"><span>🤖</span><span>AI</span></button>
+    </nav>
 
-  <!-- Architecture -->
-  <section class="section architecture" id="architecture">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Technical Foundation</span>
-        <h2>Architecture designed for reliability & intelligence</h2>
-        <p>AI handles interpretation. Deterministic code handles calculations, validation, and financial controls.</p>
-      </div>
-      <div class="arch-grid">
-        <div class="arch-card">
-          <h3>Frontend</h3>
-          <p class="tech">HTML · CSS · JavaScript</p>
-          <ul>
-            <li>Dashboard with live totals & charts</li>
-            <li>Transaction table & filters</li>
-            <li>Receipt upload interface</li>
-            <li>Budget monitoring & reports</li>
-            <li>AI insights panel</li>
-          </ul>
-        </div>
-        <div class="arch-card">
-          <h3>Backend</h3>
-          <p class="tech">Python · FastAPI</p>
-          <ul>
-            <li>RESTful expense APIs</li>
-            <li>Receipt processing pipeline</li>
-            <li>AI categorisation service calls</li>
-            <li>Validation & business rules</li>
-            <li>Report generation endpoints</li>
-          </ul>
-        </div>
-        <div class="arch-card">
-          <h3>Database</h3>
-          <p class="tech">PostgreSQL</p>
-          <ul>
-            <li>Users & role-based access</li>
-            <li>Expenses & categories</li>
-            <li>Receipts metadata</li>
-            <li>Budgets & approvals</li>
-            <li>Full audit logs</li>
-          </ul>
-        </div>
-        <div class="arch-card">
-          <h3>AI Service</h3>
-          <p class="tech">OCR + Document AI + Classification</p>
-          <ul>
-            <li>Text extraction from receipts</li>
-            <li>Field identification</li>
-            <li>Category recommendations</li>
-            <li>Confidence scoring</li>
-            <li>Learning from corrections</li>
-          </ul>
-        </div>
-      </div>
-      <div class="api-preview">
-        <h3>Illustrative API Surface</h3>
-        <div class="api-routes">
-          <code>POST   /api/expenses</code>
-          <code>GET    /api/expenses</code>
-          <code>GET    /api/expenses/{id}</code>
-          <code>PUT    /api/expenses/{id}</code>
-          <code>POST   /api/receipts/upload</code>
-          <code>GET    /api/reports/monthly</code>
-          <code>GET    /api/insights</code>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Users -->
-  <section class="section users" id="users">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Who It’s For</span>
-        <h2>Built for organisations that still live in spreadsheets</h2>
-        <p>Start with businesses that feel the pain of manual expense processes every day.</p>
-      </div>
-      <div class="users-grid">
-        <div class="user-card">
-          <h3>SMEs & Property Managers</h3>
-          <p>Track maintenance materials, generator fuel, cleaning supplies, utilities, and contractor payments without a heavyweight ERP.</p>
-        </div>
-        <div class="user-card">
-          <h3>Finance & Admin Teams</h3>
-          <p>Reduce repetitive data entry, keep supporting documents organised, and retrieve transactions in seconds instead of hours.</p>
-        </div>
-        <div class="user-card">
-          <h3>Multi-Project Organisations</h3>
-          <p>Assign expenses to projects, departments, properties, or locations and compare spending across operations with clear visibility.</p>
-        </div>
-        <div class="user-card">
-          <h3>Growing Teams</h3>
-          <p>Add approval workflows, audit trails, and role-based access as the organisation scales beyond a single spreadsheet owner.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Business Model -->
-  <section class="section business" id="business">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Business Potential</span>
-        <h2>From portfolio project to SaaS product</h2>
-        <p>Validate the product with real users first, then introduce subscription tiers that match actual value delivered.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="plan-name">Starter</div>
-          <p class="plan-desc">Core expense recording for small teams</p>
-          <ul>
-            <li>Expense recording & categories</li>
-            <li>Basic search & filters</li>
-            <li>Dashboard totals</li>
-            <li>Monthly reports</li>
-          </ul>
-        </div>
-        <div class="pricing-card featured">
-          <div class="plan-badge">Most Popular</div>
-          <div class="plan-name">Business</div>
-          <p class="plan-desc">AI-powered processing for growing companies</p>
-          <ul>
-            <li>Everything in Starter</li>
-            <li>Receipt extraction (OCR)</li>
-            <li>AI categorisation</li>
-            <li>Budgets & alerts</li>
-            <li>Advanced reports & insights</li>
-          </ul>
-        </div>
-        <div class="pricing-card">
-          <div class="plan-name">Team</div>
-          <p class="plan-desc">Full control for multi-user organisations</p>
-          <ul>
-            <li>Everything in Business</li>
-            <li>Multiple users & roles</li>
-            <li>Approval workflows</li>
-            <li>Departmental reporting</li>
-            <li>Audit logs</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Roadmap -->
-  <section class="section roadmap" id="roadmap">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Development Path</span>
-        <h2>Four clear stages to a production-ready system</h2>
-      </div>
-      <div class="roadmap-timeline">
-        <div class="roadmap-item">
-          <div class="roadmap-marker">1</div>
-          <div class="roadmap-content">
-            <h3>Reliable Core System</h3>
-            <p>Authentication, expense CRUD, categories, search, dashboard totals, monthly reports, and solid PostgreSQL foundation. No AI yet — just dependable expense management.</p>
+    <main class="main" id="main">
+      <!-- DASHBOARD -->
+      <section class="view active" id="view-dashboard">
+        <header class="view-header">
+          <div>
+            <h1>Dashboard</h1>
+            <p class="view-sub">Overview of your spending</p>
+          </div>
+          <button class="btn btn-primary btn-sm" data-view="add">+ Add Expense</button>
+        </header>
+        <div class="stats-row" id="statsRow"></div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header"><h3>Spending by Category</h3></div>
+            <div class="card-body" id="categoryBars"></div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3>Recent Transactions</h3>
+              <button class="link-btn" data-view="expenses">View all</button>
+            </div>
+            <div class="card-body" id="recentList"></div>
           </div>
         </div>
-        <div class="roadmap-item">
-          <div class="roadmap-marker">2</div>
-          <div class="roadmap-content">
-            <h3>AI-Powered Processing</h3>
-            <p>Receipt uploads, OCR extraction, AI category recommendations, confidence indicators, user confirmation flows, and duplicate warnings.</p>
+      </section>
+
+      <!-- EXPENSES -->
+      <section class="view" id="view-expenses">
+        <header class="view-header">
+          <div>
+            <h1>Expenses</h1>
+            <p class="view-sub">All recorded transactions</p>
+          </div>
+          <button class="btn btn-primary btn-sm" data-view="add">+ Add</button>
+        </header>
+        <div class="filters">
+          <input type="search" id="searchInput" placeholder="Search vendor or description…" />
+          <select id="filterCategory"><option value="">All categories</option></select>
+          <select id="filterMonth"><option value="">All time</option></select>
+        </div>
+        <div class="card">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Date</th><th>Vendor</th><th>Category</th><th>Amount</th><th>Status</th><th></th></tr>
+              </thead>
+              <tbody id="expensesBody"></tbody>
+            </table>
+          </div>
+          <div id="emptyExpenses" class="empty-state hidden">
+            <p>No expenses yet. Add your first one!</p>
+            <button class="btn btn-primary" data-view="add">Add Expense</button>
           </div>
         </div>
-        <div class="roadmap-item">
-          <div class="roadmap-marker">3</div>
-          <div class="roadmap-content">
-            <h3>Workflow Automation</h3>
-            <p>Inbound receipt channels, review notifications, scheduled reports, budget alerts, and exports to accounting tools.</p>
+      </section>
+
+      <!-- ADD / EDIT -->
+      <section class="view" id="view-add">
+        <header class="view-header">
+          <div>
+            <h1 id="formTitle">Add Expense</h1>
+            <p class="view-sub">Enter transaction details</p>
+          </div>
+        </header>
+        <div class="card form-card">
+          <form id="expenseForm">
+            <input type="hidden" id="editId" />
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="vendor">Vendor / Merchant</label>
+                <input type="text" id="vendor" required placeholder="e.g. ABC Office Supplies" />
+              </div>
+              <div class="form-group">
+                <label for="amount">Amount (₦)</label>
+                <input type="number" id="amount" required min="1" step="1" placeholder="45000" />
+              </div>
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" required />
+              </div>
+              <div class="form-group">
+                <label for="category">Category</label>
+                <div class="cat-row">
+                  <select id="category" required></select>
+                  <button type="button" class="btn btn-ghost btn-sm" id="aiSuggestBtn">🤖 Suggest</button>
+                </div>
+                <div id="aiSuggestion" class="ai-suggestion hidden"></div>
+              </div>
+              <div class="form-group full">
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="What was purchased?" />
+              </div>
+              <div class="form-group">
+                <label for="project">Project / Department</label>
+                <input type="text" id="project" placeholder="e.g. Head Office" />
+              </div>
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status">
+                  <option value="pending">Pending Review</option>
+                  <option value="approved">Approved</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" data-view="expenses">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Expense</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- SCAN RECEIPT -->
+      <section class="view" id="view-receipt">
+        <header class="view-header">
+          <div>
+            <h1>Scan Receipt</h1>
+            <p class="view-sub">Upload a receipt — AI extracts the details</p>
+          </div>
+        </header>
+        <div class="card form-card">
+          <div class="upload-zone" id="uploadZone">
+            <div class="upload-icon">📷</div>
+            <p>Tap to select a receipt image</p>
+            <p class="upload-hint">Demo works without a real image</p>
+            <input type="file" id="receiptFile" accept="image/*" hidden />
+          </div>
+          <div id="ocrResult" class="ocr-result hidden">
+            <div class="ocr-status" id="ocrStatus">Extracting…</div>
+            <div class="form-grid" id="ocrFields"></div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" id="ocrCancel">Cancel</button>
+              <button type="button" class="btn btn-primary" id="ocrSave">Confirm & Save</button>
+            </div>
+          </div>
+          <div class="demo-receipts">
+            <p class="demo-label">Try a demo receipt:</p>
+            <div class="demo-btns">
+              <button class="btn btn-ghost btn-sm demo-btn" data-demo="office">Office Supplies ₦45,000</button>
+              <button class="btn btn-ghost btn-sm demo-btn" data-demo="fuel">Generator Fuel ₦28,500</button>
+              <button class="btn btn-ghost btn-sm demo-btn" data-demo="internet">Internet Bill ₦32,000</button>
+            </div>
           </div>
         </div>
-        <div class="roadmap-item">
-          <div class="roadmap-marker">4</div>
-          <div class="roadmap-content">
-            <h3>Real-User Validation</h3>
-            <p>Pilot with a small set of businesses. Measure time saved, extraction accuracy, categorisation accuracy, and correction frequency. Iterate on real data.</p>
+      </section>
+
+      <!-- REPORTS -->
+      <section class="view" id="view-reports">
+        <header class="view-header">
+          <div>
+            <h1>Reports</h1>
+            <p class="view-sub">Spending summaries & breakdowns</p>
+          </div>
+          <select id="reportMonth" class="select-sm"></select>
+        </header>
+        <div class="stats-row" id="reportStats"></div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header"><h3>Category Breakdown</h3></div>
+            <div class="card-body" id="reportCategories"></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><h3>Top Vendors</h3></div>
+            <div class="card-body" id="reportVendors"></div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Career / Competencies -->
-  <section class="section competencies">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Portfolio Value</span>
-        <h2>Demonstrates real engineering depth</h2>
-        <p>SpendWise AI connects technical skills to an operational problem observed firsthand.</p>
-      </div>
-      <div class="comp-grid">
-        <div class="comp-item"><strong>Software Engineering</strong> — Full-stack application & API design</div>
-        <div class="comp-item"><strong>Artificial Intelligence</strong> — Document interpretation & classification</div>
-        <div class="comp-item"><strong>Data Management</strong> — Relational design for financial records</div>
-        <div class="comp-item"><strong>Process Automation</strong> — End-to-end workflow orchestration</div>
-        <div class="comp-item"><strong>Data Analytics</strong> — Spending summaries & pattern detection</div>
-        <div class="comp-item"><strong>Systems Integration</strong> — External services & automation platforms</div>
-        <div class="comp-item"><strong>Responsible AI</strong> — Validation, human oversight, data protection</div>
-        <div class="comp-item"><strong>Product Thinking</strong> — Features grounded in a real business problem</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section cta" id="cta">
-    <div class="container">
-      <div class="cta-box">
-        <h2>Ready to reduce the manual work in expense management?</h2>
-        <p>SpendWise AI turns receipts into structured, reviewable financial records — with AI that assists and humans that decide.</p>
-        <div class="cta-actions">
-          <a href="#hero" class="btn btn-primary">Explore the Concept</a>
-          <a href="mailto:hello@spendwise.ai" class="btn btn-secondary">Get in Touch</a>
+      <!-- AI INSIGHTS -->
+      <section class="view" id="view-insights">
+        <header class="view-header">
+          <div>
+            <h1>AI Insights</h1>
+            <p class="view-sub">Smart observations about your spending</p>
+          </div>
+        </header>
+        <div id="insightsList" class="insights-list"></div>
+        <div class="card chat-card">
+          <div class="card-header"><h3>Ask SpendWise AI</h3></div>
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-bubble ai">Hi! I can answer questions about your expenses. Try: “How much did we spend on fuel this month?” or “Which category is highest?”</div>
+          </div>
+          <div class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Ask about your spending…" />
+            <button class="btn btn-primary btn-sm" id="chatSend">Ask</button>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    </main>
+  </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <span class="logo-icon">SW</span>
-        <span>SpendWise AI</span>
-      </div>
-      <p>An AI-powered expense management project designed to automate recording, categorisation, analysis, and reporting of financial transactions.</p>
-      <p class="footer-note">Inspired by operational challenges observed at Smart Residences Ltd. Built as a technology portfolio and potential SaaS product.</p>
-      <p class="copyright">© 2026 SpendWise AI. All rights reserved.</p>
-    </div>
-  </footer>
-
+  <div id="toast" class="toast hidden"></div>
   <script src="script.js"></script>
 </body>
 </html>
